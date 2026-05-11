@@ -36,3 +36,4 @@ await del('/users/1');
 ## License
 
 MIT
+trigger
