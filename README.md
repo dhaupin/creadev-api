@@ -7,17 +7,31 @@
 
 ## Install
 
-\`\`\`bash
+```bash
 npm install @creadev.org/api
-\`\`\`
+```
 
 ## Usage
 
-\`\`\`typescript
-import { } from '@creadev.org/api';
+```typescript
+import { ApiClient, createApi, get, post, put, del } from '@creadev.org/api';
 
-// ...
-\`\`\`
+const api = createApi({ baseUrl: 'https://api.example.com' });
+const data = await get('/users');
+await post('/users', { name: 'New User' });
+await put('/users/1', { name: 'Updated' });
+await del('/users/1');
+```
+
+## API
+
+| Function | Description |
+|----------|-------------|
+| `createApi(options?)` | Create API client |
+| `get(path)` | GET request |
+| `post(path, data)` | POST request |
+| `put(path, data)` | PUT request |
+| `del(path)` | DELETE request |
 
 ## License
 
